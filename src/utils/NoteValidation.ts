@@ -6,8 +6,8 @@ export const validate = (values: FormInput) => {
 
   if (!values.title) {
     errors.title = 'Required!';
-  } else if (values.title.length > 100) {
-    errors.title = 'Must be 100 charecters or less';
+  } else if (values.title.length > 28) {
+    errors.title = 'Must be 28 charecters or less';
   }
 
   return errors;

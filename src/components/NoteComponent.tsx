@@ -14,6 +14,7 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
   return (
     <Box
       m={'10px'}
+      w={'500px'}
       p={'10px'}
       bg={'beige'}
       borderRadius={'2xl'}
@@ -22,12 +23,16 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
       alignItems={'center'}
     >
       <Box>
-        <Heading as={'h5'} m={'5px'}>
+        <Heading fontSize={'3xl'} m={'5px'}>
           {note.title}
         </Heading>
         <Text m={'5px'}>{note.body}</Text>
       </Box>
-      <Button m={'5px'} onClick={() => noteContext?.dispatch({ type: 'REMOVE_NOTE', note })}>
+      <Button
+        colorScheme={'facebook'}
+        m={'5px'}
+        onClick={() => noteContext?.dispatch({ type: 'REMOVE_NOTE', note })}
+      >
         <DeleteIcon />
       </Button>
     </Box>
