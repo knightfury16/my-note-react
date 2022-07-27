@@ -1,4 +1,4 @@
-import { Box, ChakraProvider, Flex } from '@chakra-ui/react';
+import { Box, ChakraProvider, Flex, Heading } from '@chakra-ui/react';
 import React, { useEffect, useReducer } from 'react';
 import { NoteContext } from '../context/noteContext';
 import { notesRudcer } from '../reducers/noteReducer';
@@ -29,14 +29,16 @@ export const App: React.FC<props> = ({ initialNote = [] }) => {
     <ChakraProvider>
       <NoteContext.Provider value={{ notes, dispatch }}>
         <Box
+          p={'8px'}
           bg={'facebook.300'}
           textAlign={'center'}
-          fontSize={'30px'}
-          // fontWeight={'bold'}
-          fontFamily={'heading'}
+          fontFamily={'sans-serif'}
           fontStyle={'italic'}
+          borderBottom={'5px'}
+          borderBottomStyle={'solid'}
+          borderColor={'facebook.400'}
         >
-          <h1>My Notes</h1>
+          <Heading as={'h3'}>My Notes</Heading>
         </Box>
         <Flex justifyContent={'space-between'} alignItems={'center'}>
           <NoteList />
