@@ -10,9 +10,7 @@ export const NoteList: React.FC = () => {
       <Center>
         <Heading>Notes</Heading>
       </Center>
-      {noteContext?.notes.reverse().map(note => (
-        <NoteComponent key={note.id} note={note} />
-      ))}
+      {noteContext?.notes.map(note => <NoteComponent key={note.id} note={note} />).reverse()}
     </Box>
   );
 };
