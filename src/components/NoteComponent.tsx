@@ -13,6 +13,7 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
   // const postition = useMousePoisition();
   return (
     <Box
+      as="button"
       m={'10px'}
       w={'500px'}
       p={'10px'}
@@ -21,6 +22,7 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
       display={'flex'}
       justifyContent={'space-between'}
       alignItems={'center'}
+      onClick={() => console.log("I'm clicked!")}
     >
       <Box>
         <Heading fontSize={'3xl'} m={'5px'}>
