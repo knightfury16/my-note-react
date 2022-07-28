@@ -40,7 +40,7 @@ export const App: React.FC<props> = ({ initialNote = [] }) => {
         >
           <Heading as={'h3'}>My Notes</Heading>
         </Box>
-        <Flex justifyContent={'space-between'} alignItems={'center'}>
+        <Flex justifyContent={'space-between'} alignItems={'flex-start'}>
           <NoteList />
           <AddNoteForm />
         </Flex>

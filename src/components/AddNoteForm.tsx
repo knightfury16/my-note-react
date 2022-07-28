@@ -1,9 +1,11 @@
 import {
   Box,
   Button,
+  Center,
   FormControl,
   FormErrorMessage,
   FormLabel,
+  Heading,
   Input,
   Textarea
 } from '@chakra-ui/react';
@@ -36,6 +38,9 @@ export const AddNoteForm: React.FC = () => {
 
   return (
     <Box mt={8} mx="auto" maxW={'500px'} w={'100%'}>
+      <Center>
+        <Heading>Add Notes</Heading>
+      </Center>
       <form onSubmit={formik.handleSubmit}>
         <FormControl isInvalid={formik.touched.title && !!formik.errors.title}>
           <FormLabel htmlFor="title">Title</FormLabel>
