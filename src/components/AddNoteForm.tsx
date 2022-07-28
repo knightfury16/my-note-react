@@ -10,6 +10,7 @@ import {
   Textarea
 } from '@chakra-ui/react';
 import { useFormik } from 'formik';
+import { nanoid } from 'nanoid';
 import { useContext } from 'react';
 import { NoteContext } from '../context/noteContext';
 import { validate } from '../utils/NoteValidation';
@@ -30,7 +31,7 @@ export const AddNoteForm: React.FC = () => {
 
     onSubmit: values => {
       setTimeout(() => {
-        noteContext?.dispatch({ type: 'ADD_NOTE', note: values });
+        noteContext?.dispatch({ type: 'ADD_NOTE', note: { ...values, id: nanoid() } });
         formik.resetForm();
       }, 500);
     }

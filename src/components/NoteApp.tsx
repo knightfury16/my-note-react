@@ -8,7 +8,7 @@ import { NoteList } from './NoteList';
 interface props {
   initialNote?: Note[];
 }
-export type Note = { title: string; body?: string };
+export type Note = { id: string; title: string; body?: string };
 
 export const App: React.FC<props> = ({ initialNote = [] }) => {
   const [notes, dispatch] = useReducer(notesRudcer, initialNote);
