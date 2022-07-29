@@ -13,7 +13,7 @@ export const notesRudcer = (state: State, actions: Actions) => {
     case 'ADD_NOTE':
       return [...state, actions.note];
     case 'REMOVE_NOTE':
-      return state.filter(note => note.title !== actions.note.title);
+      return state.filter(note => note.id !== actions.note.id);
     default:
       return state;
   }
