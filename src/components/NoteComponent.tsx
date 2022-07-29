@@ -1,4 +1,4 @@
-import { Box, Button, Heading, Link, Text } from '@chakra-ui/react';
+import { Box, Button, chakra, Flex, Link } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { NoteContext } from '../context/noteContext';
 import { Note } from './NoteApp';
@@ -11,41 +11,79 @@ export interface noteProps {
 
 export const NoteComponent: React.FC<noteProps> = ({ note }) => {
   const noteContext = useContext(NoteContext);
+
   const getBodySnippet = (note: Note) => {
-    const snippetLength = 50;
+    const snippetLength = 60;
     if (note.body.length > snippetLength) {
       return `${note.body.slice(0, snippetLength)}...`;
     } else {
       return note.body;
     }
   };
-  // const postition = useMousePoisition();
+
   return (
     <Box
-      m={'10px'}
-      w={'500px'}
-      p={'10px'}
-      bg={'beige'}
-      borderRadius={'2xl'}
-      display={'flex'}
-      justifyContent={'space-between'}
-      alignItems={'center'}
+      m={10}
+      px={8}
+      py={4}
+      rounded="lg"
+      shadow="lg"
+      bg="white"
+      _dark={{
+        bg: 'gray.800'
+      }}
+      width={'550px'}
     >
-      <Box>
-        <Link as={ReactLink} to={`/note/${note.id}`} state={{ note }}>
-          <Heading fontSize={'3xl'} m={'5px'}>
-            {note.title}
-          </Heading>
+      <Box mt={2}>
+        <Link
+          as={ReactLink}
+          to={`/note/${note.id}`}
+          state={{ note }}
+          fontSize="2xl"
+          color="gray.700"
+          _dark={{
+            color: 'white'
+          }}
+          fontWeight="700"
+          _hover={{
+            color: 'gray.600',
+            _dark: {
+              color: 'gray.200'
+            },
+            textDecor: 'underline'
+          }}
+        >
+          {note.title}
         </Link>
-        <Text m={'5px'}>{getBodySnippet(note)}</Text>
+        <chakra.p
+          mt={2}
+          color="gray.600"
+          _dark={{
+            color: 'gray.300'
+          }}
+        >
+          {getBodySnippet(note)}
+        </chakra.p>
       </Box>
-      <Button
-        colorScheme={'facebook'}
-        m={'5px'}
-        onClick={() => noteContext?.dispatch({ type: 'REMOVE_NOTE', note })}
-      >
-        <DeleteIcon />
-      </Button>
+      <Flex mt={5} justifyContent={'space-between'} alignContent={'center'}>
+        <Link
+          as={ReactLink}
+          to={`/note/${note.id}`}
+          state={{ note }}
+          color="brand.600"
+          _dark={{
+            color: 'brand.400'
+          }}
+          _hover={{
+            textDecor: 'underline'
+          }}
+        >
+          Read more
+        </Link>
+        <Button size={'sm'} onClick={() => noteContext?.dispatch({ type: 'REMOVE_NOTE', note })}>
+          <DeleteIcon />
+        </Button>
+      </Flex>
     </Box>
   );
 };

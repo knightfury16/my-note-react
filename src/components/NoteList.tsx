@@ -8,9 +8,26 @@ export const NoteList: React.FC = () => {
   return (
     <Box ml={'20px'} mt={'15px'}>
       <Center>
-        <Heading>Notes</Heading>
+        <Heading
+          fontWeight={600}
+          fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
+          lineHeight={'110%'}
+          color={'orange.400'}
+        >
+          Notes
+        </Heading>
       </Center>
-      {noteContext?.notes.map(note => <NoteComponent key={note.id} note={note} />).reverse()}
+      <Box
+        bg="#edf3f8"
+        _dark={{
+          bg: '#3e3e3e'
+        }}
+        p={5}
+        w="full"
+        rounded={'md'}
+      >
+        {noteContext?.notes.map(note => <NoteComponent key={note.id} note={note} />).reverse()}
+      </Box>
     </Box>
   );
 };
