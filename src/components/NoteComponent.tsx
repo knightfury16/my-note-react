@@ -24,8 +24,8 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
       alignItems={'center'}
     >
       <Box>
-        <Link as={ReactLink} to={`/note/${note.id}`}>
-          <Heading fontSize={'3xl'} m={'5px'} _hover={{}}>
+        <Link as={ReactLink} to={`/note/${note.id}`} state={{ note }}>
+          <Heading fontSize={'3xl'} m={'5px'}>
             {note.title}
           </Heading>
         </Link>
