@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Header } from './components/Header';
 import { App } from './components/NoteApp';
-import { Note } from './routes/me';
+import { Note } from './routes/note';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
