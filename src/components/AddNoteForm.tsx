@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Center,
   FormControl,
@@ -14,6 +13,7 @@ import { nanoid } from 'nanoid';
 import { useContext } from 'react';
 import { NoteContext } from '../context/noteContext';
 import { validate } from '../utils/NoteValidation';
+import { Wrapper } from '../utils/Wrapper';
 
 export interface FormInput {
   title: string;
@@ -38,7 +38,7 @@ export const AddNoteForm: React.FC = () => {
   });
 
   return (
-    <Box mt={8} mx="auto" maxW={'500px'} w={'100%'}>
+    <Wrapper variant="small">
       <Center>
         <Heading>Add Notes</Heading>
       </Center>
@@ -64,6 +64,6 @@ export const AddNoteForm: React.FC = () => {
           {formik.isSubmitting ? 'submitting...' : 'Add note'}
         </Button>
       </form>
-    </Box>
+    </Wrapper>
   );
 };
