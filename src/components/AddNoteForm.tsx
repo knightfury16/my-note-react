@@ -60,7 +60,7 @@ export const AddNoteForm: React.FC = () => {
           <FormLabel htmlFor="body">Body</FormLabel>
           <Textarea id="body" placeholder="body..." {...formik.getFieldProps('body')} />
         </FormControl>
-        <Button m={4} colorScheme="facebook" type="submit" disabled={formik.isSubmitting}>
+        <Button m={4} ml={1} colorScheme="facebook" type="submit" disabled={formik.isSubmitting}>
           {formik.isSubmitting ? 'submitting...' : 'Add note'}
         </Button>
       </form>
