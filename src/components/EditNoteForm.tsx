@@ -28,6 +28,10 @@ interface EditNoteFormprops {
 export const EditNoteform: React.FC<EditNoteFormprops> = ({ note }) => {
   const noteContext = useContext(NoteContext);
   const navigate = useNavigate();
+
+  const didValueChange = (initialvalues: FormInput, currentValues: FormInput) =>
+    currentValues !== initialvalues ? true : false;
+
   const formik = useFormik<FormInput>({
     initialValues: {
       title: note.title,
@@ -37,8 +41,10 @@ export const EditNoteform: React.FC<EditNoteFormprops> = ({ note }) => {
 
     onSubmit: values => {
       setTimeout(() => {
-        noteContext?.dispatch({ type: 'EDIT_NOTE', note: { ...values, id: note.id } });
-        navigate('/');
+        if (didValueChange(formik.initialValues, values)) {
+          noteContext?.dispatch({ type: 'EDIT_NOTE', note: { ...values, id: note.id } });
+        }
+        navigate(`/note/${note.id}`, { state: { note: { ...values, id: note.id } } });
       }, 500);
     }
   });
