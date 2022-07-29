@@ -14,13 +14,13 @@ export const ControlSetting: React.FC<ControlSettingProp> = ({ note }) => {
   const noteContext = useContext(NoteContext);
   return (
     <Box display={'flex'} justifyContent={'space-between'} alignContent={'center'}>
-      <Button mb={'12px'} colorScheme={'facebook'} size={'sm'} onClick={() => navigate('/')}>
+      <Button mb={'12px'} colorScheme={'blackAlpha'} size={'sm'} onClick={() => navigate('/')}>
         <ArrowBackIcon />
       </Button>
       <Box>
         <Button
           mb={'12px'}
-          colorScheme={'facebook'}
+          colorScheme={'blackAlpha'}
           size={'sm'}
           onClick={() => {
             navigate(`/edit/${note.id}`, { state: { note } });
@@ -31,7 +31,7 @@ export const ControlSetting: React.FC<ControlSettingProp> = ({ note }) => {
         <Button
           ml={'8px'}
           mb={'12px'}
-          colorScheme={'facebook'}
+          colorScheme={'blackAlpha'}
           size={'sm'}
           onClick={() => {
             noteContext.dispatch({ type: 'REMOVE_NOTE', note });

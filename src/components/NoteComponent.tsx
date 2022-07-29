@@ -80,7 +80,11 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
         >
           Read more
         </Link>
-        <Button size={'sm'} onClick={() => noteContext?.dispatch({ type: 'REMOVE_NOTE', note })}>
+        <Button
+          colorScheme={'blackAlpha'}
+          size={'sm'}
+          onClick={() => noteContext?.dispatch({ type: 'REMOVE_NOTE', note })}
+        >
           <DeleteIcon />
         </Button>
       </Flex>
