@@ -1,3 +1,4 @@
+import { ArrowBackIcon } from '@chakra-ui/icons';
 import {
   Button,
   Center,
@@ -70,8 +71,11 @@ export const EditNoteform: React.FC<EditNoteFormprops> = ({ note }) => {
         </FormControl>
         <FormControl>
           <FormLabel htmlFor="body">Body</FormLabel>
-          <Textarea id="body" placeholder="body..." {...formik.getFieldProps('body')} />
+          <Textarea minH={400} id="body" placeholder="body..." {...formik.getFieldProps('body')} />
         </FormControl>
+        <Button colorScheme={'facebook'} onClick={() => navigate(-1)}>
+          <ArrowBackIcon />
+        </Button>
         <Button m={4} ml={1} colorScheme="facebook" type="submit" disabled={formik.isSubmitting}>
           {formik.isSubmitting ? 'submitting...' : 'Edit note'}
         </Button>
