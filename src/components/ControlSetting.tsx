@@ -6,20 +6,26 @@ import { NoteContext } from '../context/noteContext';
 import { Note } from './NoteApp';
 
 interface ControlSettingProp {
-  note?: Note;
+  note: Note;
 }
 
 export const ControlSetting: React.FC<ControlSettingProp> = ({ note }) => {
   const navigate = useNavigate();
   const noteContext = useContext(NoteContext);
-  console.log(noteContext);
   return (
     <Box display={'flex'} justifyContent={'space-between'} alignContent={'center'}>
       <Button mb={'12px'} colorScheme={'facebook'} size={'sm'} onClick={() => navigate('/')}>
         <ArrowBackIcon />
       </Button>
       <Box>
-        <Button mb={'12px'} colorScheme={'facebook'} size={'sm'} onClick={() => navigate('/')}>
+        <Button
+          mb={'12px'}
+          colorScheme={'facebook'}
+          size={'sm'}
+          onClick={() => {
+            navigate(`/edit/${note.id}`, { state: { note } });
+          }}
+        >
           <EditIcon />
         </Button>
         <Button
@@ -27,7 +33,10 @@ export const ControlSetting: React.FC<ControlSettingProp> = ({ note }) => {
           mb={'12px'}
           colorScheme={'facebook'}
           size={'sm'}
-          onClick={() => navigate('/')}
+          onClick={() => {
+            noteContext.dispatch({ type: 'REMOVE_NOTE', note });
+            navigate('/');
+          }}
         >
           <DeleteIcon />
         </Button>
