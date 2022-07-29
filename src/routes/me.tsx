@@ -10,8 +10,10 @@ export const Note: React.FC = () => {
   const location = useLocation();
   const { state } = location;
   return (
-    <Box>
-      <Heading>{(state as State).note.title}</Heading>
-    </Box>
+    <>
+      <Box mx={'auto'} maxWidth={'700px'} width={'100%'}>
+        <Heading>{(state as State).note.title}</Heading>
+      </Box>
+    </>
   );
 };
