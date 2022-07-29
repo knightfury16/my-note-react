@@ -11,6 +11,14 @@ export interface noteProps {
 
 export const NoteComponent: React.FC<noteProps> = ({ note }) => {
   const noteContext = useContext(NoteContext);
+  const getBodySnippet = (note: Note) => {
+    const snippetLength = 50;
+    if (note.body.length > snippetLength) {
+      return `${note.body.slice(0, snippetLength)}...`;
+    } else {
+      return note.body;
+    }
+  };
   // const postition = useMousePoisition();
   return (
     <Box
@@ -29,7 +37,7 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
             {note.title}
           </Heading>
         </Link>
-        <Text m={'5px'}>{note.body}</Text>
+        <Text m={'5px'}>{getBodySnippet(note)}</Text>
       </Box>
       <Button
         colorScheme={'facebook'}
