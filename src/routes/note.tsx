@@ -12,6 +12,13 @@ export const Note: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
   const { state } = location;
+  const doesBodyexist = () => {
+    if ((state as State).note.body === '') {
+      return false;
+    } else {
+      return true;
+    }
+  };
   return (
     <Wrapper>
       <Box bg={'beige'} rounded={'5px'} p={'15px'} minH={'xs'}>
@@ -19,8 +26,8 @@ export const Note: React.FC = () => {
           <ArrowBackIcon />
         </Button>
         <Heading size={'lg'}>{(state as State).note.title}</Heading>
-        <Text mt={'10px'}>
-          {(state as State).note.body === '' ? 'empty' : (state as State).note.body}{' '}
+        <Text mt={'10px'} opacity={doesBodyexist() ? '100%' : '50%'}>
+          {doesBodyexist() ? (state as State).note.body : 'empty'}
         </Text>
       </Box>
     </Wrapper>
