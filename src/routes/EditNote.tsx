@@ -1,4 +1,4 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { EditNoteform } from '../components/EditNoteForm';
 import { Note } from '../components/NoteApp';
 
