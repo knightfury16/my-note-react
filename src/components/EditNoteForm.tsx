@@ -56,7 +56,7 @@ export const EditNoteform: React.FC<EditNoteFormprops> = ({ note }) => {
       <Center>
         <MyHeading>Edit Note</MyHeading>
       </Center>
-      <FormDefaultStyle>
+      <FormDefaultStyle opacity={0.95}>
         <form onSubmit={formik.handleSubmit}>
           <FormControl isInvalid={formik.touched.title && !!formik.errors.title}>
             <FormLabel htmlFor="title">Title</FormLabel>

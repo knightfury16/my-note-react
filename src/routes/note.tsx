@@ -1,4 +1,5 @@
 import { Box, chakra, Heading } from '@chakra-ui/react';
+import { useEffect } from 'react';
 import { Location, useLocation } from 'react-router-dom';
 import { ControlSetting } from '../components/ControlSetting';
 import { Note as SingleNote } from '../components/NoteApp';
@@ -9,6 +10,10 @@ type State = {
 };
 
 export const Note: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  }, []);
+
   const statewithType = (location: Location) => {
     const { state } = location;
     return state as State;
@@ -24,7 +29,7 @@ export const Note: React.FC = () => {
     }
   };
   return (
-    <Wrapper>
+    <Wrapper height="fit-content">
       <Box
         m={10}
         px={8}
