@@ -1,5 +1,5 @@
 import { Box, ChakraProvider } from '@chakra-ui/react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import { Header } from './components/Header';
 import { NoteApp } from './components/NoteApp';
 import { NoteProvider } from './provider/NoteProvider';
@@ -13,7 +13,7 @@ export const App: React.FC = () => {
   return (
     <ChakraProvider>
       <NoteProvider>
-        <BrowserRouter>
+        <HashRouter>
           <Box
             h={'100%'}
             backgroundImage={bgImage}
@@ -30,9 +30,10 @@ export const App: React.FC = () => {
               <Route path="edit" element={<EditNote />}>
                 <Route path=":noteId" element={<EditNote />} />
               </Route>
+              <Route path="*" element={<div>Page not found</div>} />
             </Routes>
           </Box>
-        </BrowserRouter>
+        </HashRouter>
       </NoteProvider>
     </ChakraProvider>
   );

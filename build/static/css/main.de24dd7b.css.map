@@ -1,1 +1,0 @@
-{"version":3,"file":"static/css/main.de24dd7b.css","mappings":"AAAA,EACE,uBACF,CACA,oBACE,YACF","sources":["App.css"],"sourcesContent":["* {\r\n  -ms-overflow-style: none;\r\n}\r\n::-webkit-scrollbar {\r\n  display: none;\r\n}\r\n"],"names":[],"sourceRoot":""}
