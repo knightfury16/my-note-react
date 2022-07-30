@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+# Want to put the build file
+# /build
 
 # misc
 .DS_Store
