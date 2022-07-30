@@ -13,7 +13,7 @@ export const MyHeading: React.FC<MyHeadingProp> = ({
 }) => {
   return (
     <Heading
-      backgroundColor={'rgb(237, 243, 248, 0.5)'}
+      backgroundColor={'rgb(237, 243, 248, 0.8)'}
       shadow={'xl'}
       fontWeight={fontWeight}
       fontStyle={'italic'}

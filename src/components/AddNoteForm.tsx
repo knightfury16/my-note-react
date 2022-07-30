@@ -41,7 +41,7 @@ export const AddNoteForm: React.FC = () => {
   return (
     <Wrapper variant="small">
       <Center>
-        <MyHeading>Add Notes</MyHeading>
+        <MyHeading>Add Note</MyHeading>
       </Center>
       <FormDefaultStyle>
         <form onSubmit={formik.handleSubmit}>

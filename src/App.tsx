@@ -5,6 +5,7 @@ import { NoteApp } from './components/NoteApp';
 import { NoteProvider } from './provider/NoteProvider';
 import { EditNote } from './routes/EditNote';
 import { Note } from './routes/note';
+import './App.css';
 
 import bgImage from './resource/white.jpg';
 

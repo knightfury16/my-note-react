@@ -20,6 +20,7 @@ export const Wrapper: React.FC<WrapperProps> = ({
       mb={8}
       maxW={variant === 'regular' ? '800px' : '550px'}
       w={width === 'fit-content' ? 'fit-content' : '100%'}
+      //! it just work, don't touch, gonna fix latter.
       h={height === 'fit-content' ? '100vh' : 'fit-content'}
     >
       {children}

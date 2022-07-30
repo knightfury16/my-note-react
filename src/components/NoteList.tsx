@@ -22,7 +22,24 @@ export const NoteList: React.FC = () => {
         shadow={'dark-lg'}
         rounded={'md'}
       >
-        {noteContext?.notes.map(note => <NoteComponent key={note.id} note={note} />).reverse()}
+        {noteContext.notes.length === 0 ? (
+          <Box
+            m={10}
+            px={8}
+            py={4}
+            rounded="lg"
+            shadow="lg"
+            bg="white"
+            _dark={{
+              bg: 'gray.800'
+            }}
+            width={'550px'}
+          >
+            Such Empty...
+          </Box>
+        ) : (
+          noteContext?.notes.map(note => <NoteComponent key={note.id} note={note} />).reverse()
+        )}
       </Box>
     </Wrapper>
   );
