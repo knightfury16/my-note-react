@@ -6,7 +6,7 @@ import { NoteProvider } from './provider/NoteProvider';
 import { EditNote } from './routes/EditNote';
 import { Note } from './routes/note';
 
-import bgImage from './resource/dark.jpg';
+import bgImage from './resource/white.jpg';
 
 export const App: React.FC = () => {
   return (
@@ -16,13 +16,9 @@ export const App: React.FC = () => {
           <Box
             h={'100%'}
             backgroundImage={bgImage}
-            backgroundPosition="center"
-            backgroundRepeat="no-repeat"
-            backgroundSize={'cover'}
-            // backgroundColor={'#e5e4e2'}
-            // backgroundColor={'#4ca1af'}
-            // bgGradient="linear(red.100 0%, orange.100 25%, yellow.100 50%)"
-            // bgGradient="linear(#e5e4e2 0%, #f5f5f5 100%)"
+            // backgroundPosition="top"
+            backgroundRepeat="repeat-y"
+            backgroundSize={'100%'}
           >
             <Header />
             <Routes>

@@ -1,33 +1,29 @@
-import { Box, Center, Heading } from '@chakra-ui/react';
+import { Box, Center } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { NoteContext } from '../context/noteContext';
+import { MyHeading } from '../utils/MyHeading';
+import { Wrapper } from '../utils/Wrapper';
 import { NoteComponent } from './NoteComponent';
 
 export const NoteList: React.FC = () => {
   const noteContext = useContext(NoteContext);
   return (
-    <Box ml={'20px'} mt={'15px'}>
+    <Wrapper width="fit-content">
       <Center>
-        <Heading
-          fontWeight={600}
-          fontSize={{ base: '2xl', sm: '4xl', md: '6xl' }}
-          lineHeight={'110%'}
-          color={'orange.400'}
-        >
-          Notes
-        </Heading>
+        <MyHeading>Notes</MyHeading>
       </Center>
       <Box
-        bg="#edf3f8"
+        backgroundColor={'rgb(237, 243, 248, 0.85)'}
         _dark={{
           bg: '#3e3e3e'
         }}
         p={5}
         w="full"
+        shadow={'dark-lg'}
         rounded={'md'}
       >
         {noteContext?.notes.map(note => <NoteComponent key={note.id} note={note} />).reverse()}
       </Box>
-    </Box>
+    </Wrapper>
   );
 };
