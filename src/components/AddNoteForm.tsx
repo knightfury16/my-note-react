@@ -1,5 +1,4 @@
 import {
-  Box,
   Button,
   Center,
   FormControl,
@@ -12,6 +11,7 @@ import { useFormik } from 'formik';
 import { nanoid } from 'nanoid';
 import { useContext } from 'react';
 import { NoteContext } from '../context/noteContext';
+import { FormDefaultStyle } from '../utils/FormDeafultStyle';
 import { MyHeading } from '../utils/MyHeading';
 import { validate } from '../utils/NoteValidation';
 import { Wrapper } from '../utils/Wrapper';
@@ -43,7 +43,7 @@ export const AddNoteForm: React.FC = () => {
       <Center>
         <MyHeading>Add Notes</MyHeading>
       </Center>
-      <Box backgroundColor={'rgb(237, 243, 248, 0.65)'} rounded={'md'} p={10} shadow={'2xl'}>
+      <FormDefaultStyle>
         <form onSubmit={formik.handleSubmit}>
           <FormControl isInvalid={formik.touched.title && !!formik.errors.title}>
             <FormLabel htmlFor="title">Title</FormLabel>
@@ -79,7 +79,7 @@ export const AddNoteForm: React.FC = () => {
             {formik.isSubmitting ? 'submitting...' : 'Add note'}
           </Button>
         </form>
-      </Box>
+      </FormDefaultStyle>
     </Wrapper>
   );
 };
