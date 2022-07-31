@@ -14,6 +14,7 @@ export const Note: React.FC = () => {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
+  // ! Refactor this
   const statewithType = (location: Location) => {
     const { state } = location;
     return state as State;
@@ -45,6 +46,7 @@ export const Note: React.FC = () => {
         <Box mt={2}>
           <Heading
             fontSize="2xl"
+            mb={5}
             color="gray.700"
             _dark={{
               color: 'white'

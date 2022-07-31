@@ -13,7 +13,7 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
   const noteContext = useContext(NoteContext);
 
   const getBodySnippet = (note: Note) => {
-    const snippetLength = 60;
+    const snippetLength = 65;
     if (note.body.length > snippetLength) {
       return `${note.body.slice(0, snippetLength)}...`;
     } else {
