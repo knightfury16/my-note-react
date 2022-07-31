@@ -8,7 +8,7 @@ import { NoteComponent } from './NoteComponent';
 export const NoteList: React.FC = () => {
   const noteContext = useContext(NoteContext);
   return (
-    <Wrapper width="fit-content">
+    <Wrapper variant="regular">
       <Center>
         <MyHeading>Notes</MyHeading>
       </Center>

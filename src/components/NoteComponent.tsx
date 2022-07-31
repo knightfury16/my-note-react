@@ -24,15 +24,14 @@ export const NoteComponent: React.FC<noteProps> = ({ note }) => {
   return (
     <Box
       m={10}
-      px={8}
-      py={4}
+      p={4}
       rounded="lg"
       shadow="lg"
       bg="white"
       _dark={{
         bg: 'gray.800'
       }}
-      width={'550px'}
+      // width={'550px'}
     >
       <Box mt={2}>
         <Link

@@ -29,12 +29,11 @@ export const Note: React.FC = () => {
     }
   };
   return (
-    <Wrapper height="fit-content">
+    <Wrapper width={850} height="fit-content">
       <Box
         m={10}
-        px={8}
-        py={4}
         minH={'xs'}
+        p={6}
         rounded="lg"
         shadow="dark-lg"
         bg="white"

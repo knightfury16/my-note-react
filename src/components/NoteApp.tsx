@@ -9,7 +9,7 @@ export type Note = { id: string; title: string; body?: string };
 
 export const NoteApp: React.FC<props> = ({ initialNote = [] }) => {
   return (
-    <Flex justifyContent={'space-between'} alignItems={'flex-start'}>
+    <Flex justifyContent={'space-between'} alignItems={'flex-start'} m={2}>
       <NoteList />
       <AddNoteForm />
     </Flex>

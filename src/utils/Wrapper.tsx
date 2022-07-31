@@ -3,23 +3,27 @@ import { Box } from '@chakra-ui/react';
 interface WrapperProps {
   children: React.ReactNode;
   variant?: 'small' | 'regular';
-  width?: 'fit-content' | '100%';
   height?: 'fit-content' | '100%';
+  width?: number;
 }
 
 export const Wrapper: React.FC<WrapperProps> = ({
   children,
   variant = 'regular',
-  width = '100%',
-  height = '100%'
+  height = '100%',
+  width
 }) => {
+  const getWidth = () => {
+    return width !== undefined ? `${width}px` : variant === 'small' ? '550px' : '650px';
+  };
+
   return (
     <Box
       mt={8}
       mx="auto"
       mb={8}
-      maxW={variant === 'regular' ? '800px' : '550px'}
-      w={width === 'fit-content' ? 'fit-content' : '100%'}
+      maxW={getWidth()}
+      w={'100vw'}
       //! it just work, don't touch, gonna fix latter.
       h={height === 'fit-content' ? '100vh' : 'fit-content'}
     >
