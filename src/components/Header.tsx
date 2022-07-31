@@ -5,7 +5,7 @@ import { Link as ReactLink } from 'react-router-dom';
 export const Header: React.FC = () => {
   return (
     <Heading
-      backgroundColor={'rgb(237, 243, 248, 0.85)'}
+      backgroundColor={'rgb(237, 243, 248, 0.98)'}
       shadow={'dark-lg'}
       fontWeight={'extrabold'}
       fontStyle={'normal'}
@@ -14,6 +14,9 @@ export const Header: React.FC = () => {
       color={'rgb(223, 54, 45,0.8)'}
       saturate={'150%'}
       p={3}
+      position={'sticky'}
+      top={'0'}
+      zIndex={999}
     >
       <Center>
         <Link
