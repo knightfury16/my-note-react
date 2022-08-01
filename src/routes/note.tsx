@@ -30,7 +30,7 @@ export const Note: React.FC = () => {
     }
   };
   return (
-    <Wrapper width={850} height="fit-content">
+    <Wrapper width={750} height="fit-content">
       <Box
         m={10}
         minH={'xs'}
@@ -62,6 +62,7 @@ export const Note: React.FC = () => {
             _dark={{
               color: 'gray.300'
             }}
+            whiteSpace={'pre'}
           >
             {doesBodyexist() ? state.note.body : 'empty'}
           </chakra.p>
