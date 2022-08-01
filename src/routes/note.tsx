@@ -62,7 +62,7 @@ export const Note: React.FC = () => {
             _dark={{
               color: 'gray.300'
             }}
-            whiteSpace={'pre'}
+            whiteSpace={'pre-wrap'}
           >
             {doesBodyexist() ? state.note.body : 'empty'}
           </chakra.p>
